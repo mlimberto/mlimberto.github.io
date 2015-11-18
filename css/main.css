@@ -1,190 +1,306 @@
-/*
- * Author: Matteo Limberto
- *
- */
- 
- @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
- 
- body {
- 	overflow-x: hidden; 
- }
-  
- p {
- 	font-size: 20px;
- }
- 
- p.small {
- 	font-size: 16px;
- }
- 
- a,
- a:hover,
- a:focus,
- a:active,
- a.active {
- 	outline: 0;
- 	color: #18bc9c;
+/* Main CSS sheet */ 
+
+
+body {
+	background-color: : #f2f2f2;
+	font-family: "Lato";
+	font-weight: 300;
+	font-size: 16px;
+	color: #555;
+
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
 }
- 
- /* Titles */
- h1,h2,h3,h4,h5,h6 {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
- 	font-weight: 700;
- 	color : #333
- 	text-transform: uppercase;
- }
- 
- /* Horizontal line settings! */
- hr.star-light,
- hr.star-primary {
- 	margin: 25px auto 30px;
- 	padding:0;
- 	max-width: 250px;
- 	border: 0;
- 	border-top: solid 5px;
- 	text-align: center;
- }
- 
- hr.star-light:after {
- 	color: #fff;
- 	background-color: #18bc9c;
- }
- 
- hr.star-primary: {
- 	border-color: #2c3e50;
- }
- 
- hr.star-primary:after {
-    color: #2c3e50;
-    background-color: #fff;
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/*Links*/
+
+a {
+	color : #f85c37;
+	word-wrap: break-word;
+
+	-webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/*---------------------------------------------------
+	3.1 Topbar
+---------------------------------------------------*/
+@media(min-width: 768px) {
+	.navbar-fixed-top {
+		padding: 18px ;
+		-webkit-transition: padding .3s;
+		-moz-transition: padding .3s;
+		transition: padding .3s;
+	}
+
+	.navbar-fixed-top .navbar-brand {
+		font-size: 2em;
+		-webkit-transition: all .3s;
+		-moz-transition: all .3s;
+		transition: all .3s;
+	}
+
+	.navbar-fixed-top.navbar-shrink {
+		padding: 10px 0;
+	}
+
+	.navbar-fixed-top.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+
+}
+
+.navbar {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+}
+
+.navbar li {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.navbar a:focus {
+	outline: 0;
+}
+
+.navbar .navbar-nav {
+	letter-spacing: 1px;
+}
+
+.navbar .navbar-nav li a:focus {
+	outline: 0;
+}
+
+.navbar-default,
+.navbar-inverse {
+	border: 0;
+}
+
+
+/*
+#section-topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	overflow: visible;
+	font: normal 16px/24px  'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#section-topbar a {
+  color: #fff; /
+}
+
+#topbar-inner {
+	background: #111;
+	line-height: 0;
+	text-align: center;
+}
+
+#section-topbar ul#nav {
+	display: inline-block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+
+	border-right: 1px solid #222;
+
+	/* For IE, the outcast */ /*
+	zoom:1;
+	*display: inline;
+}
+
+#section-topbar ul#nav > li {
+	display: block;
+    float: left;
+    padding: 0;
+}
+
+#section-topbar ul#nav a {
+  display: block;
+  font: normal 11px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  padding: 18px 20px 18px 20px;
+  border-left: 1px solid #222;
+}
+
+	#section-topbar ul#nav a:hover {
+	  background: #222;
+	  text-decoration: none;
+	  border-left: 1px solid #111;
+	}
+
+	#section-topbar ul#nav .active a {
+		background: #44bbaa;
+		border-left: 1px solid #111;
+	}
+
+			#section-topbar ul#nav .active a:hover {
+			background: #44bbaa;
+		}
+
+	#section-topbar p {
+	font-size: 25px;
+	margin-bottom: 2px;
+} */
+
+/*---------------------------------------------------
+	SECTION WRAPS
+---------------------------------------------------*/
+
+/* Header Wrap */
+#headerwrap {
+	margin-top : 60px;
+	padding-top: 140px;
+	text-align: center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 500px;
+	width: 100%;
+
+	-webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1{
+	font-size: 80px;
+	color: black;
+}
+
+#headerwrap h3 {
+	font-size: 20px;
+	color: black;
+}
+
+#headerwrap img{
+	display: block;
+	margin: 0 auto 20px;
 }
 
 .img-centered {
     margin: 0 auto;
 }
 
-header {
-	text-align: center;
-	color: #fff; /* white */
-	background-color: #18bc9c;  /* green */
+/* Intnro Wrap */
+
+#intro {
+	background: #2c3e50;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	color:white;
 }
 
-header .container {
-	padding-top: 100px;
-	padding-bottom: 50px;
+#intro h5 {
+	color: white;
 }
 
-header img {
-	display: block;
-	margin: 0 auto 20px;
+#intro i {
+	color: white;
+	font-size: 20px;
+	padding-right: 8px;
+	vertical-align: middle;
 }
 
-header .intro-text .name {
-   	font-family: 'Montserrat', sans-serif;
-	display: block;
-	text-transform: uppercase;
-	font-size: 2em;
+
+
+/* Global Values */
+
+.desc{
+	padding-top: 50px;
+}
+
+@media(min-width: 768px){
+	.desc {
+		padding-top: 80px;
+	}
+}
+
+.desc p {
+	color: #2f2f2f;
+}
+
+.desc t {
+	color: #34495e;
 	font-weight: 700;
 }
 
-header .intro-text .skills {
-    font-size: 1.25em;
-    font-weight: 300;
+.desc imp {
+	padding: 6px;
+	color: white;
+	background: #34495e;
 }
 
-@media(min-width:768px) {
-    header .container {
-        padding-top: 200px;
-        padding-bottom: 100px;
-    }
-
-    header .intro-text .name {
-        font-size: 4.75em;
-    }
-
-    header .intro-text .skills {
-        font-size: 1.75em;
-    }
+.desc more {
+	color: #95a5a6;
 }
 
-@media(min-width:768px) {
-    .navbar-fixed-top {
-        padding: 25px 0;
-        -webkit-transition: padding .3s;
-        -moz-transition: padding .3s;
-        transition: padding .3s;
-    }
-
-    .navbar-fixed-top .navbar-brand {
-        font-size: 2em;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        transition: all .3s;
-    }
-
-    .navbar-fixed-top.navbar-shrink {
-        padding: 10px 0;
-    }
-
-    .navbar-fixed-top.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
-    }
+sm {
+	font-size: 12px;
 }
 
-.navbar {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+
+
+#footwrap {
+	background: #2f2f2f;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
-.navbar a:focus {
-    outline: 0;
+#footwrap p {
+	color: white;
 }
 
-.navbar .navbar-nav {
-    letter-spacing: 1px;
+#footwrap h5 {
+	color: white;
 }
 
-.navbar .navbar-nav li a:focus {
-    outline: 0;
+
+#footwrap t {
+	font-weight: 700;
 }
 
-.navbar-default,
-.navbar-inverse {
-    border: 0;
-}
-
-section {
-    padding: 100px 0;
-}
-
-section h2 {
-    margin: 0;
-    font-size: 3em;
-}
-
-section.success {
-    color: #fff;
-    background: #185c9c;
-}
-
-section.success a,
-section.success a:hover,
-section.success a:focus,
-section.success a:active,
-section.success a.active {
-    outline: 0;
-    color: #18bc9c;
-}
-
-@media(max-width:767px) {
-    section {
-        padding: 75px 0;
-    }
-
-    section.first {
-        padding-top: 75px;
-    }
+#footwrap i {
+	padding-right: 8px;
+	color: #1abc9c;
 }
 
 
@@ -204,16 +320,3 @@ section.success a.active {
 
 
 
-
-
-
-
-
-
-
-
- 
- 
- 
- 
- 
